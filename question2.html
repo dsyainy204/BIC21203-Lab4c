@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 2 - JSON</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+    <h2>Book Information</h2>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $.getJSON("question1.json", function(data) {
+
+                // (a) Title of the first book
+                console.log("First Book Title: " + data.books[0].title);
+
+                // (b) Author of the second book
+                console.log("Second Book Author: " + data.books[1].author);
+
+                // (c) Genres of all books
+                data.books.forEach(function(book) {
+                    console.log(book.title + " Genres: " + book.genres.join(", "));
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
